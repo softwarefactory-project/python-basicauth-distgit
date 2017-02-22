@@ -1,8 +1,8 @@
 %global         sum An incredibly simple HTTP basic auth implementation
 
-Name:           basicauth
+Name:           python-basicauth
 Version:        0.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{sum}
 
 License:        Public Domain
@@ -44,5 +44,8 @@ nosetests -v tests.py
 %{python2_sitelib}/*
 
 %changelog
+* Tue Feb 22 2017 Fabien Boucher <fboucher@redhat.com> - 0.3-2
+- Fix package name
+
 * Tue Feb 21 2017 Nicolas Hicher <nhicher@redhat.com> - 0.3-1
 - Initial packaging
