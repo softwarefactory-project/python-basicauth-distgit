@@ -1,13 +1,14 @@
 %global         sum An incredibly simple HTTP basic auth implementation
+%global         uname basicauth
 
-Name:           basicauth
+Name:           python-basicauth
 Version:        0.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{sum}
 
 License:        Public Domain
 URL:            https://github.com/rdegges/python-basicauth
-Source0:        https://pypi.python.org/packages/08/e9/0d1343e98853d984928c7398f9be60b8b068d70e7c82ffed6a7711aa8758/%{name}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/08/e9/0d1343e98853d984928c7398f9be60b8b068d70e7c82ffed6a7711aa8758/%{uname}-%{version}.tar.gz
 
 BuildArch:      noarch
 
@@ -29,7 +30,7 @@ Buildrequires:  python2-devel
 An incredibly simple HTTP basic auth implementation
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{uname}-%{version}
 
 %build
 %{__python2} setup.py build
@@ -44,5 +45,8 @@ nosetests -v tests.py
 %{python2_sitelib}/*
 
 %changelog
+* Tue Feb 22 2017 Fabien Boucher <fboucher@redhat.com> - 0.3-2
+- Fix package name
+
 * Tue Feb 21 2017 Nicolas Hicher <nhicher@redhat.com> - 0.3-1
 - Initial packaging
